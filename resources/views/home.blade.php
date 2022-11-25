@@ -8,13 +8,11 @@
                 <div class="card-header">{{ __('Dashboard') }}</div>
 
                 <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
+                    @if(Auth::user()->role == 1)
+                    <a href="{{route('users.index')}}">Import</a>
+                    @else
+                    You are logged in!
                     @endif
-
-                    {{ __('You are logged in!!!!!!!!!!!!') }}
                 </div>
             </div>
         </div>
